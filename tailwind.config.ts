@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -52,21 +53,25 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
-				}
+				// Banking specific colors
+				'bank-primary': 'hsl(var(--bank-primary))',
+				'bank-secondary': 'hsl(var(--bank-secondary))',
+				'bank-danger': 'hsl(var(--bank-danger))',
+				'bank-success': 'hsl(var(--bank-success))',
+				'bank-warning': 'hsl(var(--bank-warning))',
+				'bank-surface': 'hsl(var(--bank-surface))',
+				'bank-text-primary': 'hsl(var(--bank-text-primary))',
+				'bank-text-secondary': 'hsl(var(--bank-text-secondary))',
+				'bank-text-muted': 'hsl(var(--bank-text-muted))',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
+			},
+			fontFamily: {
+				'sans': ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+				'mono': ['Roboto Mono', 'Monaco', 'Menlo', 'monospace'],
 			},
 			keyframes: {
 				'accordion-down': {
