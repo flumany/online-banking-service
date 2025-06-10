@@ -1,4 +1,3 @@
-
 import { Bell, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -11,7 +10,7 @@ const BankingHeader = () => {
             <div className="w-8 h-8 bg-bank-primary rounded-lg flex items-center justify-center">
               <Shield className="w-5 h-5 text-white" strokeWidth={1.5} />
             </div>
-            <span className="text-xl font-semibold text-bank-text-primary">みずほ銀行</span>
+            <span className="text-xl font-semibold text-bank-text-primary">ふりこ銀行</span>
           </div>
           
           <nav className="hidden md:flex items-center gap-6">
