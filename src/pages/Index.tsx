@@ -14,10 +14,10 @@ const Index = () => {
         {/* Welcome Section */}
         <div className="animate-slide-up">
           <h1 className="text-2xl font-semibold text-bank-text-primary mb-2">
-            Good morning, John
+            おはようございます、田中様
           </h1>
           <p className="text-bank-text-secondary">
-            Here's your financial overview for today
+            本日の資産状況をご確認ください
           </p>
         </div>
 

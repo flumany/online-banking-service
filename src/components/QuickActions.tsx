@@ -6,29 +6,29 @@ const QuickActions = () => {
   const actions = [
     {
       icon: ArrowUp,
-      label: "Transfer",
-      description: "Send money",
+      label: "振込",
+      description: "送金する",
       color: "bg-bank-primary hover:bg-bank-primary/90",
       textColor: "text-white"
     },
     {
       icon: ArrowDown,
-      label: "Request",
-      description: "Request payment",
+      label: "請求",
+      description: "支払い依頼",
       color: "bg-bank-secondary hover:bg-bank-secondary/90",
       textColor: "text-white"
     },
     {
       icon: Bell,
-      label: "Pay Bills",
-      description: "Utilities & more",
+      label: "料金支払い",
+      description: "公共料金など",
       color: "bg-bank-surface hover:bg-muted border border-border",
       textColor: "text-bank-text-primary"
     },
     {
       icon: Shield,
-      label: "Invest",
-      description: "Grow your money",
+      label: "資産運用",
+      description: "投資・積立",
       color: "bg-bank-surface hover:bg-muted border border-border",
       textColor: "text-bank-text-primary"
     }
@@ -36,7 +36,7 @@ const QuickActions = () => {
 
   return (
     <div className="bank-card p-6">
-      <h3 className="font-semibold text-bank-text-primary mb-4">Quick Actions</h3>
+      <h3 className="font-semibold text-bank-text-primary mb-4">クイックアクション</h3>
       
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
         {actions.map((action) => (

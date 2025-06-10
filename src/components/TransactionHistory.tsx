@@ -20,47 +20,47 @@ const TransactionHistory = () => {
     {
       id: "1",
       type: "income",
-      amount: 3250.00,
-      description: "Salary Deposit",
-      category: "Income",
-      date: "Today",
-      time: "09:15 AM"
+      amount: 325000,
+      description: "給与振込",
+      category: "給与",
+      date: "今日",
+      time: "09:15"
     },
     {
       id: "2",
       type: "expense",
-      amount: 89.50,
-      description: "Grocery Shopping",
-      category: "Food",
-      date: "Today",
-      time: "11:30 AM"
+      amount: 8950,
+      description: "スーパーマーケット",
+      category: "食費",
+      date: "今日",
+      time: "11:30"
     },
     {
       id: "3",
       type: "expense",
-      amount: 1200.00,
-      description: "Rent Payment",
-      category: "Housing",
-      date: "Yesterday",
-      time: "02:15 PM"
+      amount: 120000,
+      description: "家賃",
+      category: "住居費",
+      date: "昨日",
+      time: "14:15"
     },
     {
       id: "4",
       type: "income",
-      amount: 75.00,
-      description: "Freelance Payment",
-      category: "Income",
-      date: "Yesterday",
-      time: "04:45 PM"
+      amount: 7500,
+      description: "フリーランス報酬",
+      category: "副収入",
+      date: "昨日",
+      time: "16:45"
     },
     {
       id: "5",
       type: "expense",
-      amount: 45.20,
-      description: "Gas Station",
-      category: "Transport",
-      date: "Dec 5, 2024",
-      time: "08:20 AM"
+      amount: 4520,
+      description: "ガソリンスタンド",
+      category: "交通費",
+      date: "2024年12月5日",
+      time: "08:20"
     }
   ];
 
@@ -79,10 +79,9 @@ const TransactionHistory = () => {
   }, {} as Record<string, Transaction[]>);
 
   const formatAmount = (amount: number, type: string) => {
-    const formatted = new Intl.NumberFormat('en-US', {
+    const formatted = new Intl.NumberFormat('ja-JP', {
       style: 'currency',
-      currency: 'USD',
-      minimumFractionDigits: 2,
+      currency: 'JPY',
     }).format(amount);
     
     return type === 'income' ? `+${formatted}` : `-${formatted}`;
@@ -90,10 +89,11 @@ const TransactionHistory = () => {
 
   const getCategoryColor = (category: string) => {
     const colors: Record<string, string> = {
-      'Income': 'bg-bank-secondary text-white',
-      'Food': 'bg-orange-100 text-orange-800',
-      'Housing': 'bg-blue-100 text-blue-800',
-      'Transport': 'bg-purple-100 text-purple-800',
+      '給与': 'bg-bank-secondary text-white',
+      '副収入': 'bg-bank-secondary text-white',
+      '食費': 'bg-orange-100 text-orange-800',
+      '住居費': 'bg-blue-100 text-blue-800',
+      '交通費': 'bg-purple-100 text-purple-800',
     };
     return colors[category] || 'bg-gray-100 text-gray-800';
   };
@@ -101,9 +101,9 @@ const TransactionHistory = () => {
   return (
     <div className="bank-card p-6">
       <div className="flex items-center justify-between mb-6">
-        <h3 className="font-semibold text-bank-text-primary text-lg">Recent Transactions</h3>
+        <h3 className="font-semibold text-bank-text-primary text-lg">取引履歴</h3>
         <Button variant="outline" size="sm">
-          View All
+          すべて表示
         </Button>
       </div>
       
@@ -111,7 +111,7 @@ const TransactionHistory = () => {
         <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-bank-text-muted" strokeWidth={1.5} />
         <input
           type="text"
-          placeholder="Search transactions..."
+          placeholder="取引を検索..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           className="w-full pl-10 pr-4 py-3 border border-border rounded-lg focus:border-bank-primary focus:ring-2 focus:ring-bank-primary/20 transition-colors"

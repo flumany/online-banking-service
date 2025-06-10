@@ -15,16 +15,15 @@ const BalanceCard = ({
   accountName, 
   accountNumber, 
   balance, 
-  currency = "USD",
+  currency = "JPY",
   isPrimary = false 
 }: BalanceCardProps) => {
   const [isBalanceVisible, setIsBalanceVisible] = useState(true);
 
   const formatBalance = (amount: number) => {
-    return new Intl.NumberFormat('en-US', {
+    return new Intl.NumberFormat('ja-JP', {
       style: 'currency',
       currency: currency,
-      minimumFractionDigits: 2,
     }).format(amount);
   };
 
@@ -62,7 +61,7 @@ const BalanceCard = ({
       
       <div className="space-y-2">
         <p className={`text-xs ${isPrimary ? 'text-white/70' : 'text-bank-text-muted'}`}>
-          Available Balance
+          残高
         </p>
         <p className={`bank-balance ${isPrimary ? 'text-white' : 'text-bank-text-primary'} text-3xl`}>
           {isBalanceVisible ? formatBalance(balance) : maskBalance()}
@@ -72,8 +71,8 @@ const BalanceCard = ({
       {isPrimary && (
         <div className="mt-6 pt-4 border-t border-white/20">
           <div className="flex justify-between text-sm">
-            <span className="text-white/70">Last updated</span>
-            <span className="text-white/90 bank-amount">Just now</span>
+            <span className="text-white/70">最終更新</span>
+            <span className="text-white/90 bank-amount">たった今</span>
           </div>
         </div>
       )}
